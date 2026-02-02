@@ -4,21 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>FlyGo Travel — Международный туризм</title>
-
-  <meta name="description" content="FlyGo Travel — международный туризм. Премиальный подбор туров, визы, авиабилеты. Работаем по всему миру. RU / UZ." />
+  <meta name="description" content="FlyGo Travel — международный туризм. Премиальный подбор туров, визы, авиабилеты. RU / UZ." />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body id="top">
 
-<!-- ================= HEADER ================= -->
 <header class="header">
   <div class="container header__inner">
-
-    <a class="brand" href="#top">
-      <img class="brand__logo" src="assets/logo-flygo.svg" alt="FlyGo Travel">
+    <a class="brand" href="#top" aria-label="FlyGo Travel">
+      <img class="brand__logo" src="assets/logo-flygo.png" alt="FlyGo Travel">
     </a>
 
     <nav class="nav">
@@ -29,9 +26,9 @@
     </nav>
 
     <div class="actions">
-      <div class="lang">
-        <button class="lang__btn is-active" data-lang="ru">RU</button>
-        <button class="lang__btn" data-lang="uz">UZ</button>
+      <div class="lang" aria-label="Language">
+        <button class="lang__btn is-active" data-lang="ru" type="button">RU</button>
+        <button class="lang__btn" data-lang="uz" type="button">UZ</button>
       </div>
 
       <a class="btn btn--ghost"
@@ -48,15 +45,13 @@
 
       <a class="btn" href="#lead" data-i18n="nav_lead">Заявка</a>
     </div>
-
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<main id="top" class="hero">
+<main class="hero">
   <div class="container hero__inner">
 
-    <div class="hero__left">
+    <section class="hero__left">
       <div class="pill" data-i18n="pill">Премиальный подбор тура</div>
 
       <h1 data-i18n="h1">
@@ -87,9 +82,8 @@
           <div class="trust__txt" data-i18n="trust_3">индивидуальные туры</div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ================= FORM ================= -->
     <aside class="card" id="lead">
       <h2 data-i18n="form_title">Быстрая заявка</h2>
       <p class="muted" data-i18n="form_subtitle">Ответим и пришлём 2–3 варианта.</p>
@@ -97,7 +91,7 @@
       <form class="form" id="leadForm">
         <label>
           <span data-i18n="f_name">Имя</span>
-          <input id="f_name" required placeholder="Например, Abdurauf">
+          <input id="f_name" required placeholder="Например, Aziz">
         </label>
 
         <label>
@@ -126,6 +120,10 @@
 
       <div class="ms">
         <a class="ms__btn"
+           href="tel:+998940241011">
+          Позвонить: +998 94 024 10 11
+        </a>
+        <a class="ms__btn"
            href="https://t.me/Abdurauf_544"
            target="_blank" rel="noopener">
           Мы в Telegram
@@ -136,7 +134,6 @@
   </div>
 </main>
 
-<!-- ================= TOURS ================= -->
 <section class="section" id="tours">
   <div class="container">
     <div class="head">
@@ -165,7 +162,6 @@
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
 <section class="section section--alt" id="services">
   <div class="container">
     <div class="head">
@@ -194,7 +190,6 @@
   </div>
 </section>
 
-<!-- ================= WHY ================= -->
 <section class="section" id="why">
   <div class="container">
     <div class="head">
@@ -223,7 +218,6 @@
   </div>
 </section>
 
-<!-- ================= CONTACTS ================= -->
 <section class="section section--alt" id="contacts">
   <div class="container">
     <div class="head">
@@ -233,33 +227,29 @@
 
     <div class="grid">
       <div class="tile tile--small">
-        <div class="tile__title">Телефон</div>
+        <div class="tile__title" data-i18n="c_phone">Телефон</div>
         <div class="tile__desc">
-          <a class="link" href="tel:+998940241011">
-            +998 94 024 10 11
-          </a>
+          <a class="link" href="tel:+998940241011">+998 94 024 10 11</a>
         </div>
       </div>
 
       <div class="tile tile--small">
-        <div class="tile__title">Telegram</div>
+        <div class="tile__title" data-i18n="c_tg">Telegram</div>
         <div class="tile__desc">
-          <a class="link"
-             href="https://t.me/Abdurauf_544"
-             target="_blank" rel="noopener">
-            Мы в Telegram
-          </a>
+          <a class="link" href="https://t.me/Abdurauf_544" target="_blank" rel="noopener">Мы в Telegram</a>
         </div>
       </div>
 
       <div class="tile tile--small">
-        <div class="tile__title">Адрес</div>
-        <div class="tile__desc">Ташкент, Узбекистан</div>
+        <div class="tile__title" data-i18n="c_reviews">Отзывы</div>
+        <div class="tile__desc">
+          <a class="link" href="https://t.me/+a2hVCODl_9oxZGM6" target="_blank" rel="noopener">Открыть канал</a>
+        </div>
       </div>
 
       <div class="tile tile--small">
-        <div class="tile__title">График</div>
-        <div class="tile__desc">Ежедневно 09:00–21:00</div>
+        <div class="tile__title" data-i18n="c_hours">График</div>
+        <div class="tile__desc" data-i18n="c_hours_v">Ежедневно 09:00–21:00</div>
       </div>
     </div>
 
@@ -272,4 +262,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
