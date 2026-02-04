@@ -32,11 +32,16 @@ const dict = {
     f_hint: "Нажимая «Отправить», вы соглашаетесь на обработку данных для связи.",
 
     tours_title: "Популярные направления",
-    tours_sub: "Ниже — самые востребованные страны.",
-    t1: "All inclusive, 4–5★, семейный отдых",
-    t2: "Dubai / Abu Dhabi, шопинг и экскурсии",
-    t3: "Thailand, Vietnam, Malaysia, China",
-    t4: "City-break, визовое сопровождение",
+    tours_sub: "Самые востребованные направления — листай карусель",
+
+    d_turkey: "Turkey",
+    d_uae: "UAE",
+    d_thailand: "Thailand",
+    d_maldives: "Maldives",
+    d_malaysia: "Malaysia",
+    d_europe: "Europe",
+    d_china: "China",
+    d_bali: "Bali",
 
     srv_title: "Услуги",
     srv_sub: "Полное сопровождение от заявки до возвращения.",
@@ -70,7 +75,7 @@ const dict = {
   },
 
   uz: {
-    nav_tours: "Turlar",
+    nav_tours: "Yo‘nalishlar",
     nav_services: "Xizmatlar",
     nav_why: "Nega biz",
     nav_contacts: "Aloqa",
@@ -98,11 +103,16 @@ const dict = {
     f_hint: "«Yuborish» tugmasini bosish orqali aloqa uchun ma’lumotlarni qayta ishlashga rozilik bildirasiz.",
 
     tours_title: "Mashhur yo‘nalishlar",
-    tours_sub: "Eng ko‘p so‘raladigan mamlakatlar.",
-    t1: "All inclusive, 4–5★, oilaviy dam olish",
-    t2: "Dubai / Abu Dhabi, shopping va ekskursiyalar",
-    t3: "Tailand, Vyetnam, Malayziya, Xitoy",
-    t4: "City-break, viza bo‘yicha yordam",
+    tours_sub: "Eng ommabop yo‘nalishlar — karuselni aylantiring",
+
+    d_turkey: "Turkiya",
+    d_uae: "BAA",
+    d_thailand: "Tailand",
+    d_maldives: "Maldiv",
+    d_malaysia: "Malayziya",
+    d_europe: "Yevropa",
+    d_china: "Xitoy",
+    d_bali: "Bali",
 
     srv_title: "Xizmatlar",
     srv_sub: "Arizadan qaytguningizgacha to‘liq hamrohlik.",
@@ -164,11 +174,16 @@ const dict = {
     f_hint: "By clicking “Send”, you agree to data processing for contact purposes.",
 
     tours_title: "Popular destinations",
-    tours_sub: "Most requested countries.",
-    t1: "All inclusive, 4–5★, family отдых",
-    t2: "Dubai / Abu Dhabi, shopping & tours",
-    t3: "Thailand, Vietnam, Malaysia, China",
-    t4: "City-break, visa assistance",
+    tours_sub: "Most requested routes — swipe the carousel",
+
+    d_turkey: "Turkey",
+    d_uae: "UAE",
+    d_thailand: "Thailand",
+    d_maldives: "Maldives",
+    d_malaysia: "Malaysia",
+    d_europe: "Europe",
+    d_china: "China",
+    d_bali: "Bali",
 
     srv_title: "Services",
     srv_sub: "Full support from request to return.",
@@ -268,4 +283,34 @@ if (leadForm) {
 
     window.open(url, "_blank");
   });
+}
+
+// ===== Carousel logic =====
+const track = document.querySelector(".carousel__track");
+const prev = document.querySelector(".carousel__btn.prev");
+const next = document.querySelector(".carousel__btn.next");
+
+if (track && prev && next) {
+  const step = () => {
+    const first = track.querySelector(".slide");
+    const w = first ? first.getBoundingClientRect().width : 260;
+    return Math.round(w + 16);
+  };
+
+  prev.addEventListener("click", () => {
+    track.scrollBy({ left: -step(), behavior: "smooth" });
+  });
+
+  next.addEventListener("click", () => {
+    track.scrollBy({ left: step(), behavior: "smooth" });
+  });
+
+  // auto-scroll
+  setInterval(() => {
+    if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
+      track.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      track.scrollBy({ left: step(), behavior: "smooth" });
+    }
+  }, 4000);
 }
