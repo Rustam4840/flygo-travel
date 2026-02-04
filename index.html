@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>FlyGo Travel — International Tourism</title>
-  <meta name="description" content="FlyGo Travel — международный туризм. Премиальный подбор туров, визы, авиабилеты. RU / UZ / EN." />
+  <meta name="description" content="FlyGo Travel — международный туризм. Премиальный подбор туров. RU / UZ / EN." />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="styles.css" />
@@ -134,41 +134,40 @@
   <div class="container">
     <div class="head">
       <h2 data-i18n="tours_title">Популярные направления</h2>
-      <p class="muted" data-i18n="tours_sub">Ниже — самые востребованные страны.</p>
+      <p class="muted" data-i18n="tours_sub">Самые востребованные направления — листай карусель</p>
     </div>
 
-    <div class="country-grid">
-      <a class="country-card" href="#lead" style="background-image:url('assets/countries/turkey.jpg')">
-        <div class="country-card__overlay"></div>
-        <div class="country-card__content">
-          <div class="country-card__title">Turkey</div>
-          <div class="country-card__desc" data-i18n="t1">All inclusive, 4–5★, семейный отдых</div>
-        </div>
-      </a>
+    <div class="carousel">
+      <button class="carousel__btn prev" type="button" aria-label="Prev">‹</button>
 
-      <a class="country-card" href="#lead" style="background-image:url('assets/countries/uae.jpg')">
-        <div class="country-card__overlay"></div>
-        <div class="country-card__content">
-          <div class="country-card__title">UAE</div>
-          <div class="country-card__desc" data-i18n="t2">Dubai / Abu Dhabi, шопинг и экскурсии</div>
-        </div>
-      </a>
+      <div class="carousel__track" aria-label="Destinations carousel">
+        <a class="slide" href="#lead" style="background-image:url('assets/countries/turkey.jpg')">
+          <span data-i18n="d_turkey">Turkey</span>
+        </a>
+        <a class="slide" href="#lead" style="background-image:url('assets/countries/uae.jpg')">
+          <span data-i18n="d_uae">UAE</span>
+        </a>
+        <a class="slide" href="#lead" style="background-image:url('assets/countries/thailand.jpg')">
+          <span data-i18n="d_thailand">Thailand</span>
+        </a>
+        <a class="slide" href="#lead" style="background-image:url('assets/countries/maldives.jpg')">
+          <span data-i18n="d_maldives">Maldives</span>
+        </a>
+        <a class="slide" href="#lead" style="background-image:url('assets/countries/malaysia.jpg')">
+          <span data-i18n="d_malaysia">Malaysia</span>
+        </a>
+        <a class="slide" href="#lead" style="background-image:url('assets/countries/europe.jpg')">
+          <span data-i18n="d_europe">Europe</span>
+        </a>
+        <a class="slide" href="#lead" style="background-image:url('assets/countries/china.jpg')">
+          <span data-i18n="d_china">China</span>
+        </a>
+        <a class="slide" href="#lead" style="background-image:url('assets/countries/bali.jpg')">
+          <span data-i18n="d_bali">Bali</span>
+        </a>
+      </div>
 
-      <a class="country-card" href="#lead" style="background-image:url('assets/countries/thailand.jpg')">
-        <div class="country-card__overlay"></div>
-        <div class="country-card__content">
-          <div class="country-card__title">Thailand</div>
-          <div class="country-card__desc" data-i18n="t3">Thailand, Vietnam, Malaysia, China</div>
-        </div>
-      </a>
-
-      <a class="country-card" href="#lead" style="background-image:url('assets/countries/europe.jpg')">
-        <div class="country-card__overlay"></div>
-        <div class="country-card__content">
-          <div class="country-card__title">Europe</div>
-          <div class="country-card__desc" data-i18n="t4">City-break, визовое сопровождение</div>
-        </div>
-      </a>
+      <button class="carousel__btn next" type="button" aria-label="Next">›</button>
     </div>
   </div>
 </section>
@@ -256,7 +255,9 @@
       <div class="tile tile--small">
         <div class="tile__title" data-i18n="c_reviews">Отзывы</div>
         <div class="tile__desc">
-          <a class="link" href="https://t.me/+a2hVCODl_9oxZGM6" target="_blank" rel="noopener">Open channel</a>
+          <a class="link" href="https://t.me/+a2hVCODl_9oxZGM6" target="_blank" rel="noopener">
+            <span data-i18n="btn_reviews">Отзывы</span>
+          </a>
         </div>
       </div>
 
