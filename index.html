@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FlyGo Travel — Международный туризм</title>
-  <meta name="description" content="FlyGo Travel — международный туризм. Премиальный подбор туров, визы, авиабилеты. RU / UZ." />
+  <title>FlyGo Travel — International Tourism</title>
+  <meta name="description" content="FlyGo Travel — международный туризм. Премиальный подбор туров, визы, авиабилеты. RU / UZ / EN." />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="styles.css" />
@@ -15,7 +15,7 @@
 <header class="header">
   <div class="container header__inner">
     <a class="brand" href="#top" aria-label="FlyGo Travel">
-      <img class="brand__logo" src="assets/logo-flygo.png" alt="FlyGo Travel">
+      <img class="brand__logo" src="assets/logo-flygo.png" alt="FlyGo Travel" loading="eager">
     </a>
 
     <nav class="nav">
@@ -29,18 +29,19 @@
       <div class="lang" aria-label="Language">
         <button class="lang__btn is-active" data-lang="ru" type="button">RU</button>
         <button class="lang__btn" data-lang="uz" type="button">UZ</button>
+        <button class="lang__btn" data-lang="en" type="button">EN</button>
       </div>
 
       <a class="btn btn--ghost"
-         href="https://t.me/Abdurauf_544"
+         href="https://t.me/DirectorFlyGo"
          target="_blank" rel="noopener">
-        Мы в Telegram
+        <span data-i18n="btn_tg">Мы в Telegram</span>
       </a>
 
       <a class="btn btn--ghost"
          href="https://t.me/+a2hVCODl_9oxZGM6"
          target="_blank" rel="noopener">
-        Отзывы
+        <span data-i18n="btn_reviews">Отзывы</span>
       </a>
 
       <a class="btn" href="#lead" data-i18n="nav_lead">Заявка</a>
@@ -119,14 +120,9 @@
       </form>
 
       <div class="ms">
-        <a class="ms__btn"
-           href="tel:+998940241011">
-          Позвонить: +998 94 024 10 11
-        </a>
-        <a class="ms__btn"
-           href="https://t.me/Abdurauf_544"
-           target="_blank" rel="noopener">
-          Мы в Telegram
+        <a class="ms__btn" href="tel:+998940241011">+998 94 024 10 11</a>
+        <a class="ms__btn" href="https://t.me/DirectorFlyGo" target="_blank" rel="noopener">
+          <span data-i18n="btn_tg">Мы в Telegram</span>
         </a>
       </div>
     </aside>
@@ -138,26 +134,41 @@
   <div class="container">
     <div class="head">
       <h2 data-i18n="tours_title">Популярные направления</h2>
-      <p class="muted" data-i18n="tours_sub">Работаем со всеми странами — ниже самые востребованные.</p>
+      <p class="muted" data-i18n="tours_sub">Ниже — самые востребованные страны.</p>
     </div>
 
-    <div class="grid">
-      <div class="tile">
-        <div class="tile__title">Turkey</div>
-        <div class="tile__desc" data-i18n="t1">All inclusive, 4–5★, семейный отдых</div>
-      </div>
-      <div class="tile">
-        <div class="tile__title">UAE</div>
-        <div class="tile__desc" data-i18n="t2">Dubai / Abu Dhabi, шопинг и экскурсии</div>
-      </div>
-      <div class="tile">
-        <div class="tile__title">Asia</div>
-        <div class="tile__desc" data-i18n="t3">Thailand, Vietnam, Malaysia, China</div>
-      </div>
-      <div class="tile">
-        <div class="tile__title">Europe</div>
-        <div class="tile__desc" data-i18n="t4">City-break, визовое сопровождение</div>
-      </div>
+    <div class="country-grid">
+      <a class="country-card" href="#lead" style="background-image:url('assets/countries/turkey.jpg')">
+        <div class="country-card__overlay"></div>
+        <div class="country-card__content">
+          <div class="country-card__title">Turkey</div>
+          <div class="country-card__desc" data-i18n="t1">All inclusive, 4–5★, семейный отдых</div>
+        </div>
+      </a>
+
+      <a class="country-card" href="#lead" style="background-image:url('assets/countries/uae.jpg')">
+        <div class="country-card__overlay"></div>
+        <div class="country-card__content">
+          <div class="country-card__title">UAE</div>
+          <div class="country-card__desc" data-i18n="t2">Dubai / Abu Dhabi, шопинг и экскурсии</div>
+        </div>
+      </a>
+
+      <a class="country-card" href="#lead" style="background-image:url('assets/countries/thailand.jpg')">
+        <div class="country-card__overlay"></div>
+        <div class="country-card__content">
+          <div class="country-card__title">Thailand</div>
+          <div class="country-card__desc" data-i18n="t3">Thailand, Vietnam, Malaysia, China</div>
+        </div>
+      </a>
+
+      <a class="country-card" href="#lead" style="background-image:url('assets/countries/europe.jpg')">
+        <div class="country-card__overlay"></div>
+        <div class="country-card__content">
+          <div class="country-card__title">Europe</div>
+          <div class="country-card__desc" data-i18n="t4">City-break, визовое сопровождение</div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -236,14 +247,16 @@
       <div class="tile tile--small">
         <div class="tile__title" data-i18n="c_tg">Telegram</div>
         <div class="tile__desc">
-          <a class="link" href="https://t.me/Abdurauf_544" target="_blank" rel="noopener">Мы в Telegram</a>
+          <a class="link" href="https://t.me/DirectorFlyGo" target="_blank" rel="noopener">
+            <span data-i18n="btn_tg">Мы в Telegram</span>
+          </a>
         </div>
       </div>
 
       <div class="tile tile--small">
         <div class="tile__title" data-i18n="c_reviews">Отзывы</div>
         <div class="tile__desc">
-          <a class="link" href="https://t.me/+a2hVCODl_9oxZGM6" target="_blank" rel="noopener">Открыть канал</a>
+          <a class="link" href="https://t.me/+a2hVCODl_9oxZGM6" target="_blank" rel="noopener">Open channel</a>
         </div>
       </div>
 
