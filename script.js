@@ -1,6 +1,5 @@
 // ====== Settings ======
-const TG_USERNAME = "Abdurauf_544"; // без @
-const REVIEWS_LINK = "https://t.me/+a2hVCODl_9oxZGM6";
+const TG_USERNAME = "DirectorFlyGo"; // без @
 
 // ====== i18n ======
 const dict = {
@@ -10,6 +9,9 @@ const dict = {
     nav_why: "Почему мы",
     nav_contacts: "Контакты",
     nav_lead: "Заявка",
+
+    btn_tg: "Мы в Telegram",
+    btn_reviews: "Отзывы",
 
     pill: "Премиальный подбор тура",
     h1: `Международный туризм — <span class="gold">на уровне сервиса</span>`,
@@ -30,7 +32,7 @@ const dict = {
     f_hint: "Нажимая «Отправить», вы соглашаетесь на обработку данных для связи.",
 
     tours_title: "Популярные направления",
-    tours_sub: "Работаем со всеми странами — ниже самые востребованные.",
+    tours_sub: "Ниже — самые востребованные страны.",
     t1: "All inclusive, 4–5★, семейный отдых",
     t2: "Dubai / Abu Dhabi, шопинг и экскурсии",
     t3: "Thailand, Vietnam, Malaysia, China",
@@ -74,6 +76,9 @@ const dict = {
     nav_contacts: "Aloqa",
     nav_lead: "Ariza",
 
+    btn_tg: "Telegramdamiz",
+    btn_reviews: "Sharhlar",
+
     pill: "Premium tur tanlash",
     h1: `Xalqaro turizm — <span class="gold">yuqori servis</span>`,
     lead: "Butun dunyo bo‘ylab eng yaxshi turlar: Turkiya, BAA, Osiyo, Yevropa. Shaffof shartlar, to‘liq hamrohlik va 24/7 yordam.",
@@ -93,7 +98,7 @@ const dict = {
     f_hint: "«Yuborish» tugmasini bosish orqali aloqa uchun ma’lumotlarni qayta ishlashga rozilik bildirasiz.",
 
     tours_title: "Mashhur yo‘nalishlar",
-    tours_sub: "Barcha mamlakatlar bo‘yicha ishlaymiz — eng ommaboplari quyida.",
+    tours_sub: "Eng ko‘p so‘raladigan mamlakatlar.",
     t1: "All inclusive, 4–5★, oilaviy dam olish",
     t2: "Dubai / Abu Dhabi, shopping va ekskursiyalar",
     t3: "Tailand, Vyetnam, Malayziya, Xitoy",
@@ -128,6 +133,72 @@ const dict = {
     c_reviews: "Sharhlar",
     c_hours: "Ish vaqti",
     c_hours_v: "Har kuni 09:00–21:00",
+  },
+
+  en: {
+    nav_tours: "Destinations",
+    nav_services: "Services",
+    nav_why: "Why us",
+    nav_contacts: "Contacts",
+    nav_lead: "Request",
+
+    btn_tg: "We’re on Telegram",
+    btn_reviews: "Reviews",
+
+    pill: "Premium tour selection",
+    h1: `International travel — <span class="gold">premium service</span>`,
+    lead: "We select the best trips worldwide: Turkey, UAE, Asia, Europe. Transparent terms, full support and 24/7 assistance.",
+    cta_main: "Get options",
+    cta_secondary: "View destinations",
+    trust_1: "hidden fees",
+    trust_2: "support",
+    trust_3: "VIP trips",
+
+    form_title: "Quick request",
+    form_subtitle: "We’ll reply and send 2–3 options.",
+    f_name: "Name",
+    f_phone: "Phone",
+    f_where: "Where to?",
+    f_msg: "Comment",
+    f_send: "Send",
+    f_hint: "By clicking “Send”, you agree to data processing for contact purposes.",
+
+    tours_title: "Popular destinations",
+    tours_sub: "Most requested countries.",
+    t1: "All inclusive, 4–5★, family отдых",
+    t2: "Dubai / Abu Dhabi, shopping & tours",
+    t3: "Thailand, Vietnam, Malaysia, China",
+    t4: "City-break, visa assistance",
+
+    srv_title: "Services",
+    srv_sub: "Full support from request to return.",
+    s1t: "Tours & flights",
+    s1d: "Selection by budget and dates.",
+    s2t: "Visas",
+    s2d: "Consultation and support.",
+    s3t: "Hotels & transfers",
+    s3d: "Trusted partners.",
+    s4t: "Insurance",
+    s4d: "Matched to country and travel type.",
+
+    why_title: "Why FlyGo Travel",
+    why_sub: "Premium service and honest approach.",
+    w1t: "Transparent pricing",
+    w1d: "No hidden charges.",
+    w2t: "Personal manager",
+    w2d: "One contact throughout.",
+    w3t: "24/7 support",
+    w3d: "We stay in touch during the trip.",
+    w4t: "Worldwide travel",
+    w4d: "Any destination on request.",
+
+    c_title: "Contacts",
+    c_sub: "Reach us in a convenient way.",
+    c_phone: "Phone",
+    c_tg: "Telegram",
+    c_reviews: "Reviews",
+    c_hours: "Working hours",
+    c_hours_v: "Daily 09:00–21:00",
   }
 };
 
@@ -137,8 +208,6 @@ function applyLang(lang){
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const key = el.getAttribute("data-i18n");
     if (!d[key]) return;
-
-    // allow HTML in headings
     if (key === "h1") el.innerHTML = d[key];
     else el.textContent = d[key];
   });
@@ -160,7 +229,7 @@ applyLang(localStorage.getItem("flygo_lang") || "ru");
 const y = document.getElementById("year");
 if (y) y.textContent = new Date().getFullYear();
 
-// ===== Lead form -> Telegram deep link (no server) =====
+// ===== Lead form -> Telegram deep link (safe for GitHub Pages) =====
 const leadForm = document.getElementById("leadForm");
 if (leadForm) {
   leadForm.addEventListener("submit", (e) => {
@@ -187,7 +256,14 @@ if (leadForm) {
       `Yo'nalish: ${dest}\n` +
       `Izoh: ${msg}`;
 
-    const text = (lang === "uz") ? textUZ : textRU;
+    const textEN =
+      `✈️ Website request (FlyGo Travel)\n` +
+      `Name: ${name}\n` +
+      `Phone: ${phone}\n` +
+      `Destination: ${dest}\n` +
+      `Comment: ${msg}`;
+
+    const text = (lang === "uz") ? textUZ : (lang === "en" ? textEN : textRU);
     const url = `https://t.me/${TG_USERNAME}?text=${encodeURIComponent(text)}`;
 
     window.open(url, "_blank");
