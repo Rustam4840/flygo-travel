@@ -34,14 +34,15 @@ const dict = {
     tours_title: "Популярные направления",
     tours_sub: "Самые востребованные направления — листай карусель",
 
-    d_turkey: "Turkey",
-    d_uae: "UAE",
-    d_thailand: "Thailand",
-    d_maldives: "Maldives",
-    d_malaysia: "Malaysia",
-    d_europe: "Europe",
-    d_china: "China",
-    d_bali: "Bali",
+    // ✅ РУССКИЕ НАЗВАНИЯ (фикс)
+    d_turkey: "Турция",
+    d_uae: "ОАЭ",
+    d_thailand: "Таиланд",
+    d_maldives: "Мальдивы",
+    d_malaysia: "Малайзия",
+    d_europe: "Европа",
+    d_china: "Китай",
+    d_bali: "Бали",
 
     srv_title: "Услуги",
     srv_sub: "Полное сопровождение от заявки до возвращения.",
@@ -314,3 +315,4 @@ if (track && prev && next) {
     }
   }, 4000);
 }
+
