@@ -74,7 +74,7 @@ const dict = {
     c_hours: "График",
     c_hours_v: "Ежедневно 09:00–21:00",
     c_address: "Адрес",
-    c_address_v: "г. Ташкент, ул. Навои, дом 3",
+    c_address_v: "Узбекистан, Ташкентская область, Янгийулский район, МФЙ Самарканд, ул. Шодлик, дом 3А",
     c_director: "Директор",
     c_director_v: "Норкулов Абдурауф Хусниддин угли",
 
@@ -150,7 +150,7 @@ const dict = {
     c_hours: "Ish vaqti",
     c_hours_v: "Har kuni 09:00–21:00",
     c_address: "Manzil",
-    c_address_v: "Toshkent shahri, Navoiy ko‘chasi, 3-uy",
+    c_address_v: "Oʻzbekiston Respublikasi, Toshkent viloyati, Yangiyoʻl tumani, Samarqand MFY, Shodlik ko‘chasi, 3A-uy",
     c_director: "Direktor",
     c_director_v: "Norqulov Abdurauf Husniddin o'g'li",
 
@@ -226,7 +226,7 @@ const dict = {
     c_hours: "Working hours",
     c_hours_v: "Daily 09:00–21:00",
     c_address: "Address",
-    c_address_v: "Tashkent, Navoi street, house 3",
+    c_address_v: "Uzbekistan, Tashkent region, Yangiyul district, Samarkand MFY, Shodlik street, building 3A",
     c_director: "Director",
     c_director_v: "Norqulov Abdurauf Husniddin o'g'li",
 
@@ -330,5 +330,6 @@ if (track && prev && next) {
     }
   }, 4000);
 }
+
 
 
