@@ -73,6 +73,11 @@ const dict = {
     c_reviews: "Отзывы",
     c_hours: "График",
     c_hours_v: "Ежедневно 09:00–21:00",
+    c_address: "Адрес",
+    c_address_v: "г. Ташкент, ул. Навои, дом 3",
+    c_director: "Директор",
+    c_director_v: "Норкулов Абдурауф Хусниддин угли",
+
   },
 
   uz: {
@@ -144,6 +149,11 @@ const dict = {
     c_reviews: "Sharhlar",
     c_hours: "Ish vaqti",
     c_hours_v: "Har kuni 09:00–21:00",
+    c_address: "Manzil",
+    c_address_v: "Toshkent shahri, Navoiy ko‘chasi, 3-uy",
+    c_director: "Direktor",
+    c_director_v: "Norqulov Abdurauf Husniddin o'g'li",
+
   },
 
   en: {
@@ -215,6 +225,11 @@ const dict = {
     c_reviews: "Reviews",
     c_hours: "Working hours",
     c_hours_v: "Daily 09:00–21:00",
+    c_address: "Address",
+    c_address_v: "Tashkent, Navoi street, house 3",
+    c_director: "Director",
+    c_director_v: "Norqulov Abdurauf Husniddin o'g'li",
+
   }
 };
 
@@ -315,4 +330,5 @@ if (track && prev && next) {
     }
   }, 4000);
 }
+
 
